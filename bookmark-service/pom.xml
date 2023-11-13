@@ -11,8 +11,8 @@
     <groupId>com.pblgllgs.spring</groupId>
     <artifactId>bookmark-service</artifactId>
     <version>1.0.0</version>
-    <name>spring-sb2-backend-k8s</name>
-    <description>spring-sb2-backend-k8s</description>
+    <name>bookmark-service</name>
+    <description>bookmark-service</description>
     <properties>
         <java.version>17</java.version>
         <testcontainers.version>1.18.3</testcontainers.version>
