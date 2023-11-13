@@ -31,4 +31,4 @@ jobs:
           ./mvnw clean package jib:dockerBuild -DskipTests
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:1.0.0
+          docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:2.0.0
