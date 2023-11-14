@@ -30,7 +30,7 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/master' }}
         name: Build and push
         run: |
-          docker build -t pblgllgs/bookmark-service:latest
+          docker build -t pblgllgs/bookmark-service:latest .
           docker tag pblgllgs/bookmark-service:latest pblgllgs/album-service:$VERSION
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:$VERSION
