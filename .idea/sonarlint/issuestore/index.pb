@@ -9,8 +9,6 @@ H
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 K
 bookmark-service/Dockerfile,9\e\9e5b2b9aacd3ff8fadf1096a0f76b856753af245
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 Ö
 Ubookmark-service/src/main/java/com/pblgllgs/spring/controller/BookmarkController.java,8\8\88de673a57586d61c0752c3b1aee5b1ef6d2b4cc
 Ä
@@ -19,10 +17,6 @@ Pbookmark-service/src/main/java/com/pblgllgs/spring/serivice/BookmarkService.jav
 Ubookmark-service/src/main/java/com/pblgllgs/spring/repository/BookmarkRepository.java,9\f\9f96e9dbf4b7a89b2a65e2dfc37fef28d2e38323
 w
 Gbookmark-service/src/main/java/com/pblgllgs/spring/dto/BookmarkDTO.java,a\1\a1a51d245ad467aa56aa3c78b0e7d7d211ce0e81
-z
-Jbookmark-service/src/main/java/com/pblgllgs/spring/dto/BookmarkMapper.java,4\3\43cbfb37195badb4153ef6ef49df601cf4a653f9
-r
-Bbookmark-service/src/main/java/com/pblgllgs/spring/BookmarkVM.java,f\3\f3e188030981d9a93a0cadaf26c3528c460a3204
 y
 Ibookmark-service/src/main/java/com/pblgllgs/spring/domain/BookmarkVM.java,8\f\8f0da3f7236d8a3792504194145dd1c20869daec
 Å
@@ -31,8 +25,6 @@ Qbookmark-service/src/main/java/com/pblgllgs/spring/dto/CreateBookmarkRequest.ja
 Mbookmark-service/src/main/java/com/pblgllgs/spring/domain/BookmarkMapper.java,1\e\1ee98e5a225b04512808f806f1930e53c4b15f5a
 â
 Ybookmark-service/src/test/java/com/pblgllgs/spring/controller/BookmarkControllerTest.java,3\1\3170b7a8ea983bd1aeaf7b2b7dc766d69e604955
-K
-docker-compose.registry.yml,4\7\47acde9d43e2d0d82392eaa2763f44682c2e35ba
 F
 docker-compose.dev.yml,c\1\c1cf370751a1690d931dc6284fef1136444f4737
 8
