@@ -17,12 +17,16 @@ build_image_dev:
 	docker image rm spring-boot-3-k8s-bookmark-service:latest
 	@echo Creando nueva imagen y arrancando compose
 	docker compose -f docker-compose.dev.yml up -d
+	@echo limpiando...
+	mvn clean
 
 build_image_prod:
 	@echo Borrando version de imagen antigua
 	docker image rm pblgllgs/bookmark-service:latest
 	@echo Creando nueva imagen y arrancando compose
 	docker compose -f docker-compose.prod.yml up -d
+	@echo limpiando...
+	mvn clean
 
 down_dev:
 	@echo Creando nueva imagen y arrancando compose
