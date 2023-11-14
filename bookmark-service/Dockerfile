@@ -5,14 +5,12 @@ WORKDIR /project
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine@sha256:da8bbb33e7e61396625b2e47dee1e6f6c164a0321ed4a80b2054a9a398057570
-ARG APPLICATION='bookmark-service-1.0.0.jar'
 RUN apk add dumb-init curl && apk cache clean
 RUN mkdir /app
 RUN addgroup --system javauser && adduser -S -s /bin/false -G javauser javauser
-COPY --from=build /project/target/$APPLICATION /app/$APPLICATION
+COPY --from=build /project/target/*.jar /app/app.jar
 WORKDIR /app
 RUN chown -R javauser:javauser /app
 RUN apk add --update curl && rm -rf /var/cache/apk/*
 USER javauser
-COPY target/${APPLICATION} app.jar
 ENTRYPOINT ["dumb-init","java","-jar","app.jar"]
