@@ -52,3 +52,14 @@ cd bookmark-service
 git update-index --chmod=+x mvnw
 ```
 
+## Build image with jib
+
+```bash
+./mvnw clean package jib:dockerBuild -DskipTests
+```
+
+## Build with docker in local
+
+```bash
+docker build -t pblgllgs/bookmark-service:latest
+```

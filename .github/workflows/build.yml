@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '**'
+env:
+  VERSION: 2.0.0
 
 jobs:
   docker-build-push:
@@ -28,7 +30,8 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/master' }}
         name: Build and push
         run: |
-          ./mvnw clean package jib:dockerBuild -DskipTests
+          docker build -t pblgllgs/bookmark-service:latest
+          docker tag pblgllgs/bookmark-service:latest pblgllgs/album-service:$VERSION
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:2.0.0
