@@ -63,3 +63,11 @@ git update-index --chmod=+x mvnw
 ```bash
 docker build -t pblgllgs/bookmark-service:latest
 ```
+
+## UPDATE FIELDS BEFORE COMMIT NEW CHANGES
+
+In Dockerfile: APPLICATION
+
+In pom.xml: version
+
+In build.yml: env.VERSION:
