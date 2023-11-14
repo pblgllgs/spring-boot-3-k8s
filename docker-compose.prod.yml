@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres_db_bookmark:
     container_name: postgres_db_bookmark
-    image: postgres:14.3
+    image: postgres:14-alpine3.18
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -23,7 +23,10 @@ services:
   bookmark-service:
     container_name: bookmark-service
     image: pblgllgs/bookmark-service:latest
+    pull_policy: always
     environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db_bookmark:5432/db_bookmark
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password

@@ -31,3 +31,11 @@ Qbookmark-service/src/main/java/com/pblgllgs/spring/dto/CreateBookmarkRequest.ja
 Mbookmark-service/src/main/java/com/pblgllgs/spring/domain/BookmarkMapper.java,1\e\1ee98e5a225b04512808f806f1930e53c4b15f5a
 ‰
 Ybookmark-service/src/test/java/com/pblgllgs/spring/controller/BookmarkControllerTest.java,3\1\3170b7a8ea983bd1aeaf7b2b7dc766d69e604955
+K
+docker-compose.registry.yml,4\7\47acde9d43e2d0d82392eaa2763f44682c2e35ba
+F
+docker-compose.dev.yml,c\1\c1cf370751a1690d931dc6284fef1136444f4737
+8
+Makefile,8\3\836efb6e25a091dcb4ff8e1dbb2f0be6a5cbf14c
+G
+docker-compose.prod.yml,b\8\b85a26465bf22f0b20a164a3f73c4f3731993e3a
