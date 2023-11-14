@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.pblgllgs.spring</groupId>
     <artifactId>bookmark-service</artifactId>
-    <version>2.0.0</version>
+    <version>1.0.0</version>
     <name>bookmark-service</name>
     <description>bookmark-service</description>
     <properties>
@@ -118,9 +118,6 @@
                     </from>
                     <to>
                         <image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
-                        <tags>
-                            <tag>latest</tag>
-                        </tags>
                     </to>
                 </configuration>
             </plugin>
