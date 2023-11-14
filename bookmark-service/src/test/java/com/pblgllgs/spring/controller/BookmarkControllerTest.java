@@ -9,17 +9,20 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -83,7 +86,7 @@ class BookmarkControllerTest {
                     "3,30,3,3,false,true,false,true",
             }
     )
-    void givenNothing_whenGetAllBookmarks_thenReturnListOfBookmarks(
+    void givenParams_whenGetAllBookmarks_thenReturnListOfBookmarks(
             int pageNo,
             int totalElements,
             int totalPages,
@@ -94,8 +97,9 @@ class BookmarkControllerTest {
             boolean hasPrevious
     ) throws Exception {
         // when - action or the behaviour that we are going the
-        mockMvc.perform(get("/api/v1/bookmarks?page="+pageNo))
-                .andExpect(status().isOk())
+        ResultActions response = mockMvc.perform(get("/api/v1/bookmarks?page=" + pageNo));
+        // then
+        response.andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalElements", equalTo(totalElements)))
                 .andExpect(jsonPath("$.totalPages", equalTo(totalPages)))
                 .andExpect(jsonPath("$.currentPage", equalTo(currentPage)))
@@ -103,6 +107,54 @@ class BookmarkControllerTest {
                 .andExpect(jsonPath("$.isLast", equalTo(isLast)))
                 .andExpect(jsonPath("$.hasNext", equalTo(hasNext)))
                 .andExpect(jsonPath("$.hasPrevious", equalTo(hasPrevious)));
+    }
+
+    @Test
+    void givenObjectCreateBookmarkRequest_whenCreateBookmark_thenReturnObjectBookmarkDTO() throws Exception {
+        //given -  precondition or setup
+        String body = """
+                {
+                    "title": "Nestjs",
+                    "url": "https://nestjs.com/"
+                }
+                """;
+        // when - action or the behaviour that we are going the
+        ResultActions response = this.mockMvc.perform(
+                post("/api/v1/bookmarks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body)
+        );
+        // then
+        response.andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id",notNullValue()))
+                .andExpect(jsonPath("$.title", is("Nestjs")))
+                .andExpect(jsonPath("$.url", is("https://nestjs.com/")));
+    }
+
+    @Test
+    void givenIncompleteObjectCreateBookmarkRequest_whenCreateBookmark_thenReturnObjectWithErrorMessage() throws Exception {
+        //given -  precondition or setup
+        String body = """
+                {
+                    "url": "https://nestjs.com/"
+                }
+                """;
+        // when - action or the behaviour that we are going the
+        ResultActions response = this.mockMvc.perform(
+                post("/api/v1/bookmarks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(body)
+        );
+        // then
+        response.andExpect(status().isBadRequest())
+                .andExpect(header().string("Content-Type", is("application/problem+json")))
+                .andExpect(jsonPath("$.type",is("https://zalando.github.io/problem/constraint-violation")))
+                .andExpect(jsonPath("$.title", is("Constraint Violation")))
+                .andExpect(jsonPath("$.status", is(400)))
+                .andExpect(jsonPath("$.violations", hasSize(1)))
+                .andExpect(jsonPath("$.violations[0].field", is("title")))
+                .andExpect(jsonPath("$.violations[0].message", is("Title should not be empty")))
+                .andReturn();
     }
 
 }

@@ -17,6 +17,7 @@
         <java.version>17</java.version>
         <testcontainers.version>1.18.3</testcontainers.version>
         <docker.username>pblgllgs</docker.username>
+        <problem-spring-web.version>0.27.0</problem-spring-web.version>
     </properties>
     <dependencies>
         <dependency>
@@ -74,7 +75,11 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.zalando</groupId>
+            <artifactId>problem-spring-web-starter</artifactId>
+            <version>${problem-spring-web.version}</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>

@@ -14,7 +14,6 @@ import java.time.Instant;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class BookmarkDTO {
 
     private Long id;
