@@ -25,11 +25,7 @@ services:
     image: pblgllgs/bookmark-service:latest
     pull_policy: always
     environment:
-      SPRING_PROFILES_ACTIVE: docker
-      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db_bookmark:5432/db_bookmark
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_PROFILES_ACTIVE: prod
     ports:
       - "8080:8080"
     depends_on:
