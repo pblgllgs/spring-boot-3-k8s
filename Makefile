@@ -15,6 +15,7 @@ packt:
 build_image_dev:
 	@echo Borrando version de imagen antigua
 	docker image rm spring-boot-3-k8s-bookmark-service:latest
+	docker image rm spring-boot-3-k8s-bookmark-frontend-service:latest
 	@echo Creando nueva imagen y arrancando compose
 	docker compose -f docker-compose.dev.yml up -d
 	@echo limpiando...
@@ -23,6 +24,7 @@ build_image_dev:
 build_image_prod:
 	@echo Borrando version de imagen antigua
 	docker image rm pblgllgs/bookmark-service:latest
+	docker image rm pblgllgs/bookmark-frontend-service:latest
 	@echo Creando nueva imagen y arrancando compose
 	docker compose -f docker-compose.prod.yml up -d
 	@echo limpiando...

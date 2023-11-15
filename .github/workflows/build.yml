@@ -6,9 +6,12 @@ on:
       - '**'
 env:
   VERSION: latest
+  REPOSITORY: pblgllgs
+  BACKEND: bookmark-service
+  FRONTEND: bookmark-frontend-service
 
 jobs:
-  docker-build-push:
+  build-bookmark-service:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,6 +33,33 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/master' }}
         name: Build and push
         run: |
-          docker build -t pblgllgs/bookmark-service:$VERSION .
+          docker build -t $REPOSITORY/$BACKEND:$VERSION .
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/bookmark-service:$VERSION
+          docker push $REPOSITORY/$BACKEND:$VERSION
+
+  build-bookmark-frontend-service:
+    name: Build bookmark frontend service
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./bookmark-frontend-service
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install nodejs 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: bookmark-frontend-service/yarn.lock
+
+      - name: build
+        run: yarn build
+
+      - if: ${{ github.ref == 'refs/heads/master' }}
+        name: Build and push
+        run: |
+          docker build -t $REPOSITORY/$FRONTEND:$VERSION .
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push $REPOSITORY/$FRONTEND:$VERSION
