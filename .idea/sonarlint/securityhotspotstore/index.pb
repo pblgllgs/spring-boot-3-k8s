@@ -38,3 +38,7 @@ $bookmark-frontend-service/.gitignore,3\a\3a9d2c728d5c40d1a69ed14ae9d0143c7e957
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+X
+(bookmark-frontend-service/.eslintrc.json,2\0\20ea799ab3b7710b0303e998f0897c8104f29452
+W
+'bookmark-frontend-service/next-env.d.ts,a\6\a69ce502377d17b48e6a00cd99d830ca44a45804

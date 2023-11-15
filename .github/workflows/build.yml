@@ -12,6 +12,7 @@ env:
 
 jobs:
   build-bookmark-service:
+    name: Build bookmark service
     runs-on: ubuntu-latest
     defaults:
       run:
