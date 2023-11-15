@@ -31,3 +31,5 @@ F
 Makefile,8\3\836efb6e25a091dcb4ff8e1dbb2f0be6a5cbf14c
 G
 docker-compose.prod.yml,b\8\b85a26465bf22f0b20a164a3f73c4f3731993e3a
+{
+Kbookmark-service/src/main/java/com/pblgllgs/spring/config/WebMvcConfig.java,1\f\1feaedd3a0352a8d6eeb595f6773ee70fb161082
