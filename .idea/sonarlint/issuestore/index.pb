@@ -42,3 +42,11 @@ X
 (bookmark-frontend-service/.eslintrc.json,2\0\20ea799ab3b7710b0303e998f0897c8104f29452
 W
 'bookmark-frontend-service/next-env.d.ts,a\6\a69ce502377d17b48e6a00cd99d830ca44a45804
+V
+&bookmark-frontend-service/package.json,7\a\7a417cc9f43d833dd4c2ead9e450ceb76c59b0f9
+X
+(bookmark-frontend-service/pages/_app.tsx,c\f\cfa3cd2764d97cc68b96a4753edde0db348ddbea
+S
+#bookmark-frontend-service/yarn.lock,1\1\119e2f5fe856484a32edb16e3d9e81e4e11749aa
+J
+bookmark-service/yarn.lock,d\d\dd5ee7e4c805dcb5d1d8a839c10d8caddad5dd55
