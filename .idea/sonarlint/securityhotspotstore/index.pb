@@ -33,8 +33,6 @@ G
 docker-compose.prod.yml,b\8\b85a26465bf22f0b20a164a3f73c4f3731993e3a
 {
 Kbookmark-service/src/main/java/com/pblgllgs/spring/config/WebMvcConfig.java,1\f\1feaedd3a0352a8d6eeb595f6773ee70fb161082
-T
-$bookmark-frontend-service/.gitignore,3\a\3a9d2c728d5c40d1a69ed14ae9d0143c7e957409
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -48,5 +46,5 @@ X
 (bookmark-frontend-service/pages/_app.tsx,c\f\cfa3cd2764d97cc68b96a4753edde0db348ddbea
 S
 #bookmark-frontend-service/yarn.lock,1\1\119e2f5fe856484a32edb16e3d9e81e4e11749aa
-J
-bookmark-service/yarn.lock,d\d\dd5ee7e4c805dcb5d1d8a839c10d8caddad5dd55
+T
+$bookmark-frontend-service/Dockerfile,6\e\6eda25d50f34f17824c742f00a86c87c2fdd47e8

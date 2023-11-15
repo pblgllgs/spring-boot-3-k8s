@@ -48,8 +48,9 @@ services:
 
   bookmark-frontend-service:
     container_name: bookmark-frontend-service
-    image: pblgllgs/bookmark-frontend-service:latest
-    pull_policy: always
+    build:
+      context: bookmark-frontend-service
+      dockerfile: Dockerfile
     environment:
       SERVER_SIDE_API_BASE_URL: http://bookmark-service:8080
       CLIENT_SIDE_API_BASE_URL: http://localhost:8080
