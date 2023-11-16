@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: backend-configmap
 data:
-  db-name: db_bookmark
-  db-host: postgres
-  db-username: postgres
-  db-password: db-password
+  db-name: "db_bookmark"
+  db-host: "postgres"
+  db-username: "postgres"
+  db-password: "db-password"
   db-port: "5432"
   

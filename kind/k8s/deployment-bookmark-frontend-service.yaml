@@ -15,6 +15,18 @@ spec:
       labels:
         app: bookmark-frontend-service
     spec:
+      initContainers:
+        - name: helper
+          image: busybox:1.31
+          command:
+            - "/bin/sh"
+            - "-c"
+            - |
+              until nc -zv bookmark-backend-service 8080
+              do
+                echo "Esperando a que el servicio de backend esté disponible..."
+                sleep 2
+              done
       containers:
       - image: pblgllgs/bookmark-frontend-service:latest
         name: bookmark-frontend-service
@@ -43,7 +55,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend-service
+  name: bookmark-frontend-service
 spec:
   type: NodePort
   selector:
@@ -53,4 +65,4 @@ spec:
     port: 3000
     protocol: TCP
     targetPort: 3000
-    nodePort: 32001
+    nodePort: 30080

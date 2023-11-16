@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: frontend-configmap
 data:
-  server-side-api-base-url: "http://backend-service:8080"
-  client-side-api-base-url: "http://localhost:32002"
+  server-side-api-base-url: "http://bookmark-backend-service:8080"
+  client-side-api-base-url: "http://localhost:18080"
   
