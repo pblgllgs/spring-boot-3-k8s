@@ -56,3 +56,5 @@ F
 kind/delete-cluster.sh,0\5\05b9c441cf387fab2f482c6c4b1e79bafb28aca8
 F
 kind/create-cluster.sh,7\4\746b44bca6d87a8057ec3fb9badf7f15db18cc4a
+D
+kind/kind-config.yml,7\2\724a7c2742201baea027f48868f6c6611f3753d9

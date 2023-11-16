@@ -80,6 +80,31 @@ down_prod:
 
 ## K8S
 
+### Create cluster with kind
+
+```bash
+./create-cluster.sh
+kubectl apply -f ./k8s
+```
+
+### Create deploy
+
+```bash
+kubectl apply -f ./k8s
+```
+
+### Delete deploy
+
+```bash
+kubectl delete -f ./k8s
+```
+
+## Delete cluster
+
+```bash
+./delete-cluster.sh
+```
+
 ### Expose FRONTEND
 
 ```bash

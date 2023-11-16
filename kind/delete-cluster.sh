@@ -1,3 +1,3 @@
 #!/bin/sh
-
-kind delete cluster --name sb-k8s
+echo "Initializing k8s cluster with kind"
+kind delete cluster --name k8s-cluster
