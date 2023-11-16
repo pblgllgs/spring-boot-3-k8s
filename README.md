@@ -108,11 +108,28 @@ kubectl delete -f ./k8s
 ### Expose FRONTEND
 
 ```bash
-k port-forward svc/frontend-service -n default 32001:3000
+k port-forward svc/bookmark-frontend-service -n default 30080:3000
 ```
 
 ### Expose BACKEND
 
 ```bash
-k port-forward svc/backend-service -n default 32002:8080
+k port-forward svc/bookmark-backend-service -n default 30090:8080
 ```
+
+## Endpoints 
+
+### Frontend
+
+
+```bash
+http://localhost
+```
+
+### Backend
+
+
+```bash
+http://localhost/bookmark-backend-service/api/v1/bookmarks
+```
+
