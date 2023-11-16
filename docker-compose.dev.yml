@@ -32,7 +32,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
     ports:
-      - "8080:8080"
+      - "18080:8080"
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
       start_period: 10s
@@ -53,16 +53,17 @@ services:
       dockerfile: Dockerfile
     environment:
       SERVER_SIDE_API_BASE_URL: http://bookmark-service:8080
-      CLIENT_SIDE_API_BASE_URL: http://localhost:8080
+      CLIENT_SIDE_API_BASE_URL: http://localhost:18080
     ports:
       - "3000:3000"
     depends_on:
       bookmark-service:
         condition: service_healthy
     networks:
-      - db_net
+      - spring-net
 volumes:
   volume_postgres_db_bookmark:
     external: false
 networks:
   spring-net:
+  db_net:
