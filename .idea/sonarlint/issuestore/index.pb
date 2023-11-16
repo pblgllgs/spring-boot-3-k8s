@@ -48,3 +48,11 @@ S
 #bookmark-frontend-service/yarn.lock,1\1\119e2f5fe856484a32edb16e3d9e81e4e11749aa
 T
 $bookmark-frontend-service/Dockerfile,6\e\6eda25d50f34f17824c742f00a86c87c2fdd47e8
+X
+(bookmark-frontend-service/next.config.js,3\1\31b5e081ba4fe0ff85f43b110128a39e0c49f042
+a
+1kind/k8s/configmap-bookmark-frontend-service.yaml,b\6\b6c521e169c64e66f7c956f32a8ad90cfa0ad3c8
+F
+kind/delete-cluster.sh,0\5\05b9c441cf387fab2f482c6c4b1e79bafb28aca8
+F
+kind/create-cluster.sh,7\4\746b44bca6d87a8057ec3fb9badf7f15db18cc4a

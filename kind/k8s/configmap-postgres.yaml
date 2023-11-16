@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-configmap
+data:
+  postgres-db-password: password
+  postgres-db-username: postgres
+  postgres-db-port: "5432"
+  postgres-db-name: db_bookmark
+  postgres-db-host: postgres

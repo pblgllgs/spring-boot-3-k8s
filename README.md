@@ -77,3 +77,17 @@ down_prod:
 	@echo Creando nueva imagen y arrancando compose
 	docker compose -f docker-compose.prod.yml down -v
 ```
+
+## K8S
+
+### Expose FRONTEND
+
+```bash
+k port-forward svc/frontend-service -n default 32001:3000
+```
+
+### Expose BACKEND
+
+```bash
+k port-forward svc/backend-service -n default 32002:8080
+```
