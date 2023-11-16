@@ -4,5 +4,5 @@ metadata:
   name: frontend-configmap
 data:
   server-side-api-base-url: "http://bookmark-backend-service:8080"
-  client-side-api-base-url: "http://localhost:18080"
+  client-side-api-base-url: "http://k8s-cluster.com:18080"
   

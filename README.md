@@ -119,11 +119,16 @@ k port-forward svc/bookmark-backend-service -n default 30090:8080
 
 ## Endpoints 
 
-### Frontend
-
+add in host files this "k8s-cluster.com" this way every request will be redirected to localhost
 
 ```bash
-http://localhost
+127.0.0.1 k8s-cluster.com
+```
+
+### Frontend
+
+```bash
+http://k8s-cluster.com
 ```
 
 ### Backend

@@ -4,13 +4,14 @@ metadata:
   name: frontend-ingress
 spec:
   rules:
-    - http:
-        paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: bookmark-frontend-service
-                port:
-                  number: 3000
+  - host: k8s-cluster.com
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: bookmark-frontend-service
+              port:
+                number: 3000
 
