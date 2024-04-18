@@ -58,8 +58,6 @@ F
 kind/create-cluster.sh,7\4\746b44bca6d87a8057ec3fb9badf7f15db18cc4a
 D
 kind/kind-config.yml,7\2\724a7c2742201baea027f48868f6c6611f3753d9
-Y
-)kind/k8s/deployment-bookmark-service.yaml,d\a\dabcc9e4c17d40fa3545cd3d8560832397f0ebc8
 a
 1kind/k8s/deployment-bookmark-backend-service.yaml,7\0\70d72a04d03ab6cd57ec7cf81fc4b67147522e8c
 b
@@ -74,3 +72,9 @@ M
 kind/k8s/ingress-backend.yaml,0\6\06e311e2db32d62521d0fb6680846c9ad3424a24
 N
 kind/k8s/ingress-frontend.yaml,9\b\9bbc815792e961168218241c82b54a56ba4401ac
+x
+Hbookmark-service/src/main/java/com/pblgllgs/spring/dto/BookmarksDTO.java,4\4\441b54a37547d8f91ec3e254ef96cfa866ecfc07
+†
+Vbookmark-service/src/main/java/com/pblgllgs/spring/SpringSb2BackendK8sApplication.java,5\3\537e7d02d6c801cc1b8b186af46428a780aac634
+w
+Gbookmark-service/src/main/java/com/pblgllgs/spring/domain/Bookmark.java,7\c\7c9d1c3e2ee10f9d7da4a92cf7be2f681d605459
